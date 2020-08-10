@@ -2,7 +2,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AliExpressTests
 {
+    using System.ComponentModel;
     using AliExpress.PageObject;
+    using AliExpress.PageObject.Interfaces;
+    using AliExpress.Selenium;
 
     [TestClass]
     public class AliExpressTests
@@ -10,7 +13,11 @@ namespace AliExpressTests
         [TestMethod]
         public void ICanBuyAnIphoneFromSecondAd()
         {
-            var landingPage = new LandingPage();
+            var browser = new BrowserInitializer();
+            var driver = browser.New();
+            var landingPage = new LandingPage(driver);
+
+            driver.Quit();
             ResultsPage resultsPage = landingPage.Search.For("iPhone");
             AdPage secondAdPage = resultsPage.Ads(2).Click();
 

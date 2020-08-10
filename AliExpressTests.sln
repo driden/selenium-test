@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliExpressTests", "AliExpressTests\AliExpressTests.csproj", "{A16AEE54-43FD-4432-84C3-A6C2A534736D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliExpress.PageObject", "AliExpress.PageObject\AliExpress.PageObject.csproj", "{2084407D-38A6-4E15-BA54-18979A19EB03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AliExpress.Selenium", "AliExpress.Selenium\AliExpress.Selenium.csproj", "{EC20D177-65B3-4FF8-BB6E-F45BB3A09E11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A16AEE54-43FD-4432-84C3-A6C2A534736D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A16AEE54-43FD-4432-84C3-A6C2A534736D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A16AEE54-43FD-4432-84C3-A6C2A534736D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2084407D-38A6-4E15-BA54-18979A19EB03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2084407D-38A6-4E15-BA54-18979A19EB03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2084407D-38A6-4E15-BA54-18979A19EB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2084407D-38A6-4E15-BA54-18979A19EB03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC20D177-65B3-4FF8-BB6E-F45BB3A09E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC20D177-65B3-4FF8-BB6E-F45BB3A09E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC20D177-65B3-4FF8-BB6E-F45BB3A09E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC20D177-65B3-4FF8-BB6E-F45BB3A09E11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

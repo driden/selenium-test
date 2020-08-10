@@ -11,10 +11,12 @@
     <PackageReference Include="MSTest.TestAdapter" Version="2.1.0" />
     <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
     <PackageReference Include="coverlet.collector" Version="1.2.0" />
+    <PackageReference Include="Selenium.Chrome.WebDriver" Version="83.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AliExpress.PageObject\AliExpress.PageObject.csproj" />
+    <ProjectReference Include="..\AliExpress.Selenium\AliExpress.Selenium.csproj" />
   </ItemGroup>
 
 </Project>
