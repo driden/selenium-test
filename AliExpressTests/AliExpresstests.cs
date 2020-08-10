@@ -2,6 +2,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AliExpressTests
 {
+    using AliExpress.PageObject;
+
     [TestClass]
     public class AliExpressTests
     {
@@ -9,8 +11,8 @@ namespace AliExpressTests
         public void ICanBuyAnIphoneFromSecondAd()
         {
             var landingPage = new LandingPage();
-            var resultsPage = landingPage.Search.For("iPhone");
-            var secondAdPage = resultsPage.Results(2).Click();
+            ResultsPage resultsPage = landingPage.Search.For("iPhone");
+            AdPage secondAdPage = resultsPage.Ads(2).Click();
 
             Assert.IsTrue(secondAdPage.Quantity.AmountLeft > 0, "There are not enough phones");
         }
