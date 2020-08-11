@@ -5,6 +5,7 @@
     using System.Collections.Immutable;
     using System.Linq;
     using OpenQA.Selenium;
+    using OpenQA.Selenium.Support.UI;
     using PageObject.Interfaces;
 
     public class WebDriverAdapter : IDriver
@@ -41,6 +42,13 @@
         {
             var newTabHandle = driver.WindowHandles.Last();
             driver.SwitchTo().Window(newTabHandle);
+        }
+
+        public bool IsVisible(string selector, int timeout)
+        {
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeout));
+
+            return wait.Until<bool>(webDriver => webDriver.FindElement(By.CssSelector(selector)).Displayed);
         }
     }
 }
