@@ -2,6 +2,7 @@ namespace AliExpressTests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using AliExpress.PageObject;
+    using AliExpress.Selenium;
 
     [TestClass]
     public class AliExpressTests: BaseTest
@@ -11,9 +12,12 @@ namespace AliExpressTests
         {
             var landingPage = new LandingPage(driver);
             landingPage.Visit();
-            landingPage.ClosePopUp();
+            var popUp = new PopUp(driver);
+            popUp.Close();
 
             ResultsPage resultsPage = landingPage.Search.For("iPhone");
+            popUp.Close();
+
             AdPage secondAdPage = resultsPage.SelectAdByIndex(2);
 
             Assert.IsTrue(secondAdPage.Quantity.AmountLeft > 0, "There are not enough phones");

@@ -13,5 +13,7 @@
         IReadOnlyCollection<IElement> FindAllByCss(string selector);
 
         void SwitchToNewTab();
+
+        bool IsVisible(string aCloseLayer, int i);
     }
 }
