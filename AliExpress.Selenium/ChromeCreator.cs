@@ -8,9 +8,13 @@
         public override IDriver CreateChromeDriver()
         {
             var chromeService = ChromeDriverService.CreateDefaultService(CallingAssemblyDirectory);
-            var driver = new ChromeDriver(chromeService);
+            var opts = new ChromeOptions();
+            opts.AddArgument("disable-notifications");
+
+            var driver = new ChromeDriver(chromeService,opts);
             driver.Manage().Timeouts().PageLoad = PageLoad;
             driver.Manage().Timeouts().ImplicitWait = ImplicitWait;
+            driver.Manage().Window.Maximize();
             return new WebDriverAdapter(driver);
         }
     }

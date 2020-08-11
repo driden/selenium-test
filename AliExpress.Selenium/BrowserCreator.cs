@@ -7,8 +7,8 @@
 
     public abstract class BrowserCreator
     {
-        protected TimeSpan PageLoad => TimeSpan.FromSeconds(5);
-        protected TimeSpan ImplicitWait = TimeSpan.FromSeconds(1);
+        protected TimeSpan PageLoad => TimeSpan.FromSeconds(15);
+        protected TimeSpan ImplicitWait = TimeSpan.FromSeconds(10);
 
         protected string CallingAssemblyDirectory
         {

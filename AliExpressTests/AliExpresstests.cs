@@ -1,25 +1,20 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 namespace AliExpressTests
 {
-    using System.ComponentModel;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using AliExpress.PageObject;
-    using AliExpress.PageObject.Interfaces;
-    using AliExpress.Selenium;
 
     [TestClass]
-    public class AliExpressTests
+    public class AliExpressTests: BaseTest
     {
         [TestMethod]
         public void ICanBuyAnIphoneFromSecondAd()
         {
-            var browser = new BrowserInitializer();
-            var driver = browser.New();
             var landingPage = new LandingPage(driver);
+            landingPage.Visit();
+            landingPage.ClosePopUp();
 
-            driver.Quit();
             ResultsPage resultsPage = landingPage.Search.For("iPhone");
-            AdPage secondAdPage = resultsPage.Ads(2).Click();
+            AdPage secondAdPage = resultsPage.SelectAdByIndex(2);
 
             Assert.IsTrue(secondAdPage.Quantity.AmountLeft > 0, "There are not enough phones");
         }

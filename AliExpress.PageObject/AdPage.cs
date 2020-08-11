@@ -1,12 +1,20 @@
 ﻿namespace AliExpress.PageObject
 {
-    public class AdPage
+    using Interfaces;
+
+    public class AdPage : BasePage
     {
-        public ProductQuantity Quantity { get; set; }
+        public AdPage(IDriver driver) : base(driver)
+        {
+            driver.SwitchToNewTab();
+        }
+
+        public ProductQuantity Quantity => new ProductQuantity(Driver.FindOneByCss("div.product-quantity"));
 
         public AdPage Click()
         {
             throw new System.NotImplementedException();
         }
+
     }
 }

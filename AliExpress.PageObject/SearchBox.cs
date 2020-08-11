@@ -1,14 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AliExpress.PageObject
+﻿namespace AliExpress.PageObject
 {
-    public class SearchBox
+    using Interfaces;
+
+    public class SearchBox : BasePage
     {
+        private IElement searchBox => Driver.FindOneByCss("input#search-key");
+        private IElement submitButton => Driver.FindOneByCss("input[type='submit']");
+        public SearchBox(IDriver driver) : base(driver) { }
+
         public ResultsPage For(string productName)
         {
-            throw new NotImplementedException();
+            searchBox.Type(productName);
+            submitButton.Click();
+
+            return new ResultsPage(Driver);
         }
     }
 }
